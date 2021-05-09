@@ -1,0 +1,66 @@
+
+#topdiv{
+	background-image: url("background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center ;
+	height: 100px;
+	text-align: center;
+	font-size: 50px;
+	
+}
+ul {
+  list-style-type: none;
+  margin: 5;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #4CAF50;
+}
+
+.active {
+  background-color:	#33ff77;
+}
+select {
+  width: 50%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  margin-top: 2px;
+}
+
+#rent{
+	background-color: #99ffcc;
+	height: 250px;
+} 
+
+
+img{
+	width: 100%;
+}
+p{
+	font-family: Raleway;
+	size: 23px;
+
+}
+.list{
+
+	float: left;
+	width: 30%;
+	margin: 1.6%;
+}

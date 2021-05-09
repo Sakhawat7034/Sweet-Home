@@ -1,0 +1,487 @@
+<style>
+        #topdiv{
+	background-image: url("background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center ;
+	height: 100px;
+	text-align: center;
+	font-size: 50px;
+	
+}
+ul {
+  list-style-type: none;
+  margin: 5;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #4CAF50;
+}
+
+.active {
+  background-color:	#33ff77;
+}
+select {
+  width: 50%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  margin-top: 2px;
+}
+
+#rent{
+	background-color: #99ffcc;
+	height: 250px;
+} 
+
+
+img{
+	width: 100%;
+}
+p{
+	font-family: Raleway;
+	size: 23px;
+
+}
+.list{
+
+	float: left;
+	width: 30%;
+	margin: 1.6%;
+}
+    </style>
+
+    <span class="list"><img src="background.jpg">
+        <p>dsjdhksdh</p>
+      </span>
+      <span class="list"><img src="background.jpg">
+        <p>dsjdhksdh</p>
+      </span>
+      <span class="list"><img src="background.jpg">
+        <p>dsjdhksdh</p>
+      </span>
+      <span class="list"><img src="background.jpg">
+        <p>dsjdhksdh</p>
+      </span>
+      <span class="list"><img src="background.jpg">
+        <p>dsjdhksdh</p>
+      </span>
+      <span class="list"><img src="background.jpg">
+        <p>dsjdhksdh</p>
+      </span>
+      <div class="input-group">
+      <label>Username</label>
+      <input type="text" name="username" >
+    </div>
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" name="password">
+    </div>
+    <div class="input-group">
+      <button type="submit" class="btn" name="login_user">Login</button>
+    </div>
+    <div>
+      <input type="checkbox" name="remember" checked="checked"> 
+      <label for="remember"> Remember me </label>
+    </div>
+    <p>
+      Not yet a member? <a href="register.php">Sign up</a>
+    </p>
+
+    <p><?php echo "<input name='name' type='text' id='name' value='" . $error . "' />"; ?></p>
+
+
+      <div class="container row">
+        <div >
+          <h3>Post Your Ads</h3>
+            <hr >
+        </div>
+        <form action="sale.php" mathod='Post'>
+      <div class="row">
+        <div class="col-md">
+          <label>Select offer type *</label>
+          <select class="custom-select" name="offertype" id="offertype">
+            <option value="0">-Select offer type-</option>
+              <option value="rent">Rent</option>
+              <option value="sale">Sale</option>
+            </select>
+        </div>
+        <div class="col-md">
+          <label>Select property type *</label>
+          <select class="custom-select" name="propertytype" id="propertytype">
+            <option value="0">-Select property type-</option>
+            <option value="Commercial Space">Commercial Space</option>
+              <option value="Office">Office</option>
+              <option value="Flat">Flat / Apartment</option>
+              <option value="Houses">Houses</option>
+              <option value="Room">Room(for rent)</option>
+              <option value="Sublet">Sublet With Family(for rent)</option>
+              <option value="Mess">Mess(for rent)</option>
+              <option value="Hostel">Hostel(for rent)</option>
+              <option value="Garage">Garage(for rent)</option>
+              <option value="Other">Other House</option>
+            </select>
+        </div> 
+      </div>
+        <label>Title / Heading *</label>
+         <div class="form-group">
+            <input type="text" name="title" class="form-control" placeholder="Title / Heading" />
+           </div>
+           <div >
+            <label>Description *</label>
+            <textarea name="description" id="comments" placeholder="description*" style="font-size:1em; width: 100%; ">
+            </textarea>
+           </div>
+           <div class="row">
+            <div class="form-group col-md">
+              <label>floor size (sq ft)</label>
+            <input type="number" name="floor_size" class="form-control"  />
+           </div>
+           <div class="form-group col-md">
+            <label>floor no</label>
+          <select class="custom-select" name="floor_no" id="floor_no">
+            <option value="-1">Choose</option>
+            <option value="0">Ground</option>
+              <?php 
+              for ($i=1; $i <= 20; $i++) { 
+                 echo "<option value='{$i}'>{$i}th</option>"; 
+              }
+               ?>
+            </select>
+        </div>
+        <div class="form-group col-md">
+            <label>Bed Room</label>
+          <select class="custom-select" name="bed_room" id="bed_room">
+            <option value="-1">Choose</option>
+              <?php 
+              for ($i=1; $i <= 10; $i++) { 
+                 echo "<option value='{$i}'>{$i}</option>"; 
+              }
+
+               ?>
+               <option value="11">10+</option>
+            </select>
+        </div>
+        <div class="form-group col-md">
+            <label>Bath room</label>
+          <select class="custom-select" name="floor_no" id="bath">
+            <option value="-1">Choose</option>
+              <?php 
+              for ($i=1; $i <= 5; $i++) { 
+                 echo "<option value='{$i}'>{$i}</option>"; 
+              }
+
+               ?>
+               <option value="6">5+</option>
+            </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md">
+            <label>Balconies</label>
+          <select class="custom-select" name="balconies" id="balconies">
+            <option value="0">N/A</option>
+            <?php 
+              for ($i=1; $i <= 5; $i++) { 
+                 echo "<option value='{$i}'>{$i}</option>"; 
+              }
+               ?>
+               <option value="6">5+</option>
+            </select>
+        </div>
+        <div class="form-group col-md">
+          <label>Floor Type</label>
+          <select class="custom-select" name='floor_type' id='floor_type'>
+            <option value="0"> Floor Type </option>
+            <option value="Tiled">Tiled</option>
+            <option value="Mosai">Mosaic</option>
+            <option value="Marble">Marble</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group col-md">
+          <label>Dining Position</label>
+          <select class="custom-select" name='dining_positon' id='dining_positon'>
+            <option value="0"> Choose </option>
+            <option value="Space">Space</option>
+            <option value="room">Room</option>
+            <option value="no room or space">No Room or Space</option>
+          </select>
+        </div>
+        <div class="form-group col-md">
+            <label>Car Parking</label>
+          <select class="custom-select" name="car_parking" id="car_parking">
+            <option value="0">Choose</option>
+            <?php 
+              for ($i=1; $i <= 5; $i++) { 
+                 echo "<option value='{$i}'>{$i}</option>"; 
+              }
+               ?>
+               <option value="6">5+</option>
+            </select>
+        </div>
+      </div>
+        <div>
+          <h3><u>Facilities</u></h3>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="drawing_room" > 
+                        <label for="drawing_room">  Drawing Room </label>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="lift" > 
+                        <label for="lift"> Lift </label>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="gas" > 
+                        <label for="lift"> Gas </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="generator" > 
+                        <label for="generator"> Generator </label>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="wasa" > 
+                        <label for="wasa"> Wasa connection </label>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="hall" > 
+                        <label for="hall"> Community Hall </label>
+          </div>
+        </div>
+        <div >
+           <input type="checkbox" name="cctv" > 
+                   <label for="cctv">CC TV </label>
+        </div>
+        <div >
+          <div>
+          <label>Rent(tk)/month *</label>
+             <input type="number" name="rent" class="form-control"  />
+          </div>
+           <input type="checkbox" name="negotiable" > 
+                   <label for="negotiable">Nagotiable </label>
+        </div>
+        </div>
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <form action="sale.php" mathod='Post'>
+      <div class="row">
+        <div class="col-md">
+          <label>Select offer type *</label>
+          <select class="custom-select" name="offertype" id="offertype">
+            <option value="0">-Select offer type-</option>
+              <option value="rent">Rent</option>
+              <option value="sale">Sale</option>
+            </select>
+        </div>
+        <div class="col-md">
+          <label>Select property type *</label>
+          <select class="custom-select" name="propertytype" id="propertytype">
+            <option value="0">-Select property type-</option>
+            <option value="Commercial Space">Commercial Space</option>
+              <option value="Office">Office</option>
+              <option value="Flat">Flat / Apartment</option>
+              <option value="Houses">Houses</option>
+              <option value="Room">Room(for rent)</option>
+              <option value="Sublet">Sublet With Family(for rent)</option>
+              <option value="Mess">Mess(for rent)</option>
+              <option value="Hostel">Hostel(for rent)</option>
+              <option value="Garage">Garage(for rent)</option>
+              <option value="Other">Other House</option>
+            </select>
+        </div> 
+      </div>
+        <label>Title / Heading *</label>
+         <div class="form-group">
+            <input type="text" name="title" class="form-control" placeholder="Title / Heading" />
+           </div>
+           <div >
+            <label>Description *</label>
+            <textarea name="description" id="comments" placeholder="description*" style="font-size:1em; width: 100%; ">
+            </textarea>
+           </div>
+           <div class="row">
+            <div class="form-group col-md">
+              <label>floor size (sq ft)</label>
+            <input type="number" name="floor_size" class="form-control"  />
+           </div>
+           <div class="form-group col-md">
+            <label>floor no</label>
+          <select class="custom-select" name="floor_no" id="floor_no">
+            <option value="-1">Choose</option>
+            <option value="0">Ground</option>
+              <?php 
+              for ($i=1; $i <= 20; $i++) { 
+                 echo "<option value='{$i}'>{$i}th</option>"; 
+              }
+               ?>
+            </select>
+        </div>
+        <div class="form-group col-md">
+            <label>Bed Room</label>
+          <select class="custom-select" name="bed_room" id="bed_room">
+            <option value="-1">Choose</option>
+              <?php 
+              for ($i=1; $i <= 10; $i++) { 
+                 echo "<option value='{$i}'>{$i}</option>"; 
+              }
+
+               ?>
+               <option value="11">10+</option>
+            </select>
+        </div>
+        <div class="form-group col-md">
+            <label>Bath room</label>
+          <select class="custom-select" name="floor_no" id="bath">
+            <option value="-1">Choose</option>
+              <?php 
+              for ($i=1; $i <= 5; $i++) { 
+                 echo "<option value='{$i}'>{$i}</option>"; 
+              }
+
+               ?>
+               <option value="6">5+</option>
+            </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md">
+            <label>Balconies</label>
+          <select class="custom-select" name="balconies" id="balconies">
+            <option value="0">N/A</option>
+            <?php 
+              for ($i=1; $i <= 5; $i++) { 
+                 echo "<option value='{$i}'>{$i}</option>"; 
+              }
+               ?>
+               <option value="6">5+</option>
+            </select>
+        </div>
+        <div class="form-group col-md">
+          <label>Floor Type</label>
+          <select class="custom-select" name='floor_type' id='floor_type'>
+            <option value="0"> Floor Type </option>
+            <option value="Tiled">Tiled</option>
+            <option value="Mosai">Mosaic</option>
+            <option value="Marble">Marble</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group col-md">
+          <label>Dining Position</label>
+          <select class="custom-select" name='dining_positon' id='dining_positon'>
+            <option value="0"> Choose </option>
+            <option value="Space">Space</option>
+            <option value="room">Room</option>
+            <option value="no room or space">No Room or Space</option>
+          </select>
+        </div>
+        <div class="form-group col-md">
+            <label>Car Parking</label>
+          <select class="custom-select" name="car_parking" id="car_parking">
+            <option value="0">Choose</option>
+            <?php 
+              for ($i=1; $i <= 5; $i++) { 
+                 echo "<option value='{$i}'>{$i}</option>"; 
+              }
+               ?>
+               <option value="6">5+</option>
+            </select>
+        </div>
+      </div>
+        <div>
+          <h3><u>Facilities</u></h3>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="drawing_room" > 
+                        <label for="drawing_room">  Drawing Room </label>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="lift" > 
+                        <label for="lift"> Lift </label>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="gas" > 
+                        <label for="lift"> Gas </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="generator" > 
+                        <label for="generator"> Generator </label>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="wasa" > 
+                        <label for="wasa"> Wasa connection </label>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="checkbox" name="hall" > 
+                        <label for="hall"> Community Hall </label>
+          </div>
+        </div>
+        <div >
+           <input type="checkbox" name="cctv" > 
+                   <label for="cctv">CC TV </label>
+        </div>
+        <div >
+          <div>
+          <label>Rent(tk)/month *</label>
+             <input type="number" name="rent" class="form-control"  />
+          </div>
+           <input type="checkbox" name="negotiable" > 
+                   <label for="negotiable">Nagotiable </label>
+        </div>
+        </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+        $query="INSERT INTO house_details ('type','price','district','thana','bedroom','bathroom','size','gas_conn','wasa_conn','cctv','lift','floor_no','title','description','belcony','floor_type','car_parking','generator','hall','nagotiable','address','propertytype','drawing') values ('$type','$rent','$district','$thana','$bed_room','$bath','$floor_size',{$gas},{$wasa},{$cctv},{$lift},{$floor_no},{$title},{$description},{$balconies},{$floor_type},{$car_parking},{$generator},{$hall},{$negotiable},{$address},{$propertytype},{$drawing_room}) ";
